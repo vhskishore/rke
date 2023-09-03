@@ -1,7 +1,7 @@
 resource "aws_lb" "rke-nlb" {
   name = var.nlbName
   internal = false
-  subnets = aws_subnet.rke-Public-Subnet.id
+  subnets = [aws_subnet.rke-Public-Subnet.id]
   load_balancer_type = "network"
   enable_deletion_protection = false
   tags = {
@@ -16,9 +16,21 @@ resource "aws_lb_target_group" "rke-TG" {
     vpc_id = aws_vpc.rke-vpc.id
 }
 
-resource "aws_lb_target_group_attachment" "Master" {
+resource "aws_lb_target_group_attachment" "Master1" {
   target_group_arn = aws_lb_target_group.rke-TG.arn
-  target_id = aws_instance.rke_master_instance.*.id
+  target_id = aws_instance.rke_master_instance.0.id
+  port = 6443
+}
+
+resource "aws_lb_target_group_attachment" "Master2" {
+  target_group_arn = aws_lb_target_group.rke-TG.arn
+  target_id = aws_instance.rke_master_instance.1.id
+  port = 6443
+}
+
+resource "aws_lb_target_group_attachment" "Master3" {
+  target_group_arn = aws_lb_target_group.rke-TG.arn
+  target_id = aws_instance.rke_master_instance.2.id
   port = 6443
 }
 
