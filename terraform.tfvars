@@ -14,6 +14,8 @@ rkeAMI = "ami-0261755bbcb8c4a84"
 rkeAZ = "us-east-1a"
 rkeInstanceType = "t3.medium"
 rkeKey = "Macbook Air M1"
+
+#Instance EC2 Volume Details
 volumeSize = "15"
 volumeType = "gp2"
 deleteOnTermination = "true"

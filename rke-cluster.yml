@@ -1,0 +1,66 @@
+ssh_key_path: /Users/hemasivakishorevuyyuru/Desktop/Pract/Keys/Macbook Air M1.pem
+cluster_name: itzhskcluster
+kubernetes_version: v1.22.10-rancher1-1
+nodes:
+  - address: 3.86.167.219
+    hostname_override: master01
+    #internal_address: 172.16.22.12
+    user: ubuntu
+    role: [controlplane, worker, etcd]
+  - address: 44.202.69.141
+    hostname_override: master02
+    #internal_address: 172.16.32.37
+    user: ubuntu
+    role: [controlplane, worker, etcd]
+  - address: 54.235.238.241
+    hostname_override: master03
+    #internal_address: 172.16.42.73
+    user: ubuntu
+  #   role: [controlplane, worker, etcd]
+  # - address: 3.82.165.76
+  #   hostname_override: worker01
+  #   #internal_address: 172.16.42.73
+  #   user: ubuntu
+  #   role: [worker]
+  # - address: 3.95.169.163
+  #   hostname_override: worker02
+  #   #internal_address: 172.16.42.73
+  #   user: ubuntu
+  #   role: [worker]
+  # - address: 44.206.244.0
+  #   hostname_override: worker03
+  #   #internal_address: 172.16.42.73
+  #   user: ubuntu
+  #   role: [worker]
+
+authentication:
+    strategy: x509
+    sans:
+      - "rke.itzhsk.xyz"
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
+
+network:
+  plugin: flannel
+  options:
+    flannel_iface: eth0
+    flannel_backend_type: vxlan
+    flannel_autoscaler_priority_class_name: system-cluster-critical # Available as of RKE v1.2.6+
+    flannel_priority_class_name: system-cluster-critical # Available as of RKE v1.2.6+
+    
+    
+    
+    
+    
+    
+    
