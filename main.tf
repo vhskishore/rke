@@ -28,7 +28,7 @@ resource "aws_internet_gateway" "rke-INGW" {
 
 resource "aws_route_table" "rke-Public-Route" {
   vpc_id = "${aws_vpc.rke-vpc.id}"
-  route = {
+  route {
     cidr_block = "0.0.0.0/0"
     gateway_id = "${aws_internet_gateway.rke-INGW.id}"
   }
@@ -43,14 +43,14 @@ resource "aws_security_group" "rke-Public-aws_security_group" {
   name = "Public_Security_Group"
   description = "Allow RKE servers to public"
   vpc_id = aws_vpc.rke-vpc.id
-  ingress = {
+  ingress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  egress = {
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"

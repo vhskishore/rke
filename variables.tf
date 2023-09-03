@@ -1,5 +1,5 @@
 #VPC Variables
-variable "rkeIngwName" {}
+variable "vpcName" {}
 variable "cidr" {}
 
 #Subnet Variables
