@@ -1,17 +1,19 @@
 #VPC Variables
 variable "rkeIngwName" {}
-variable "var.cidr" {}
+variable "cidr" {}
 
 #Subnet Variables
-variables "publicSubnetCidr" {}
-variables "publicSubnetZone" {}
-variables "publicSubnetName" {}
-
+variable "publicSubnetCidr" {}
+variable "publicSubnetZone" {}
+variable "publicSubnetName" {}
 #Internet Gateway Variables
-variables "rkeIngwName" {}
+variable "rkeIngwName" {}
 
 #RKE-Instance Variables
-variables "rkeAMI" {}
-variables "rkeAZ" {}
-variables "rkeInstanceType" {}
-variables "rkeKey" {}
+variable "rkeAMI" {}
+variable "rkeAZ" {}
+variable "rkeInstanceType" {}
+variable "rkeKey" {}
+variable "volumeSize" {}
+variable "volumeType" {}
+variable "deleteOnTermination" {}
