@@ -21,3 +21,13 @@ resource "aws_lb_target_group_attachment" "Master" {
   target_id = aws_instance.rke_master_instance.*.id
   port = 6443
 }
+
+resource "aws_lb_listener" "rke-listener" {
+  load_balancer_arn = aws_lb.rke-nlb.arn
+  port = var.listenerPort
+  protocol = var.listenerProtocol
+  default_action {
+    type = "forward"
+    target_group_arn = aws_lb_target_group.rke-TG.arn
+  }
+}

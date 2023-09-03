@@ -17,3 +17,11 @@ variable "rkeKey" {}
 variable "volumeSize" {}
 variable "volumeType" {}
 variable "deleteOnTermination" {}
+
+#NLB Variables
+variable "nlbName" {}
+variable "tgName" {}
+variable "tfPort" {}
+variable "tgProtocol" {}
+variable "listenerPort" {}
+variable "listenerProtocol" {}

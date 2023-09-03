@@ -19,3 +19,11 @@ rkeKey = "Macbook Air M1"
 volumeSize = "15"
 volumeType = "gp2"
 deleteOnTermination = "true"
+
+#NLB Variables
+nlbName = "rke-nlb"
+tgName = "rke-tg"
+tfPort = "6443"
+tgProtocol = "TCP"
+listenerPort = "443"
+listenerProtocol = "TCP"
