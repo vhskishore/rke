@@ -1,4 +1,4 @@
-resource "aws_instance" "rke_instance" {
+resource "aws_instance" "rke_worker_instance" {
   count =   3
   ami   = var.rkeAMI
   availability_zone = var.rkeAZ
@@ -8,7 +8,7 @@ resource "aws_instance" "rke_instance" {
   vpc_security_group_ids = ["${aws_security_group.rke-Public-aws_security_group.id}"]
   associate_public_ip_address = true
   tags = {
-    Name = "RKE-Master-${count.index}"
+    Name = "RKE-Worker-${count.index}"
     ENV = "QA"
   }
   user_data = <<-EOF

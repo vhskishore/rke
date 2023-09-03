@@ -1,21 +1,25 @@
-ssh_key_path: /Users/hemasivakishorevuyyuru/Desktop/Pract/Keys/Macbook Air M1.pem
+ssh_key_path: /Users/hemasivakishorevuyyuru/Desktop/Pract/K8S_B22_Pract/RKE/Macbook Air M1.pem
 cluster_name: itzhskcluster
-kubernetes_version: v1.22.10-rancher1-1
+kubernetes_version: v1.26.7-rancher1-1
 nodes:
-  - address: 3.86.167.219
-    hostname_override: master01
-    #internal_address: 172.16.22.12
-    user: ubuntu
-    role: [controlplane, worker, etcd]
-  - address: 44.202.69.141
-    hostname_override: master02
-    #internal_address: 172.16.32.37
-    user: ubuntu
-    role: [controlplane, worker, etcd]
-  - address: 54.235.238.241
-    hostname_override: master03
-    #internal_address: 172.16.42.73
-    user: ubuntu
+    - address: 3.81.3.164
+      user: ubuntu
+      role:
+        - controlplane
+        - etcd
+        - worker
+    - address: 184.73.48.124
+      user: ubuntu
+      role:
+        - controlplane
+        - etcd
+        - worker
+    - address: 54.152.38.227
+      user: ubuntu
+      role:
+        - controlplane
+        - etcd
+        - worker
   #   role: [controlplane, worker, etcd]
   # - address: 3.82.165.76
   #   hostname_override: worker01
