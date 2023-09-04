@@ -2,40 +2,39 @@ ssh_key_path: C:\Users\VHS Kishore\Desktop\rke-terraform\rke\Macbook Air M1.pem
 cluster_name: itzhskcluster
 kubernetes_version: v1.26.7-rancher1-1
 nodes:
-    - address: 3.81.3.164
+    - address: 4.236.202.59
       user: ubuntu
       role:
         - controlplane
         - etcd
         - worker
-    - address: 184.73.48.124
+    - address: 35.168.18.220
       user: ubuntu
       role:
         - controlplane
         - etcd
         - worker
-    - address: 54.152.38.227
+    - address: 54.161.30.230
       user: ubuntu
       role:
         - controlplane
         - etcd
         - worker
-  #   role: [controlplane, worker, etcd]
-  # - address: 3.82.165.76
-  #   hostname_override: worker01
-  #   #internal_address: 172.16.42.73
-  #   user: ubuntu
-  #   role: [worker]
-  # - address: 3.95.169.163
-  #   hostname_override: worker02
-  #   #internal_address: 172.16.42.73
-  #   user: ubuntu
-  #   role: [worker]
-  # - address: 44.206.244.0
-  #   hostname_override: worker03
-  #   #internal_address: 172.16.42.73
-  #   user: ubuntu
-  #   role: [worker]
+  - address: 35.153.70.166
+    hostname_override: worker01
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [worker]
+  - address: 3.94.254.119
+    hostname_override: worker02
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [worker]
+  - address: 3.86.68.102
+    hostname_override: worker03
+    #internal_address: 172.16.42.73
+    user: ubuntu
+    role: [worker]
 
 authentication:
     strategy: x509
