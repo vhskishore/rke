@@ -1,4 +1,4 @@
-ssh_key_path: /Users/hemasivakishorevuyyuru/Desktop/Pract/K8S_B22_Pract/RKE/Macbook Air M1.pem
+ssh_key_path: C:\Users\VHS Kishore\Desktop\rke-terraform\rke\Macbook Air M1.pem
 cluster_name: itzhskcluster
 kubernetes_version: v1.26.7-rancher1-1
 nodes:
