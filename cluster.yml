@@ -20,21 +20,33 @@ nodes:
         - controlplane
         - etcd
         - worker
-  - address: 54.167.242.61
-    hostname_override: worker01
-    #internal_address: 172.16.42.73
-    user: ubuntu
-    role: [worker]
-  - address: 54.168.58.57
-    hostname_override: worker02
-    #internal_address: 172.16.42.73
-    user: ubuntu
-    role: [worker]
-  - address: 54.91.69.214
-    hostname_override: worker03
-    #internal_address: 172.16.42.73
-    user: ubuntu
-    role: [worker]
+    - address: 54.167.242.61
+      user: ubuntu
+      role:
+        - worker
+    - address: 54.168.58.57
+      user: ubuntu
+      role:
+        - worker
+    - address: 54.91.69.214
+      user: ubuntu
+      role:
+        - worker
+  # - address: 54.167.242.61
+  #   hostname_override: worker01
+  #   #internal_address: 172.16.42.73
+  #   user: ubuntu
+  #   role: [worker]
+  # - address: 54.168.58.57
+  #   hostname_override: worker02
+  #   #internal_address: 172.16.42.73
+  #   user: ubuntu
+  #   role: [worker]
+  # - address: 54.91.69.214
+  #   hostname_override: worker03
+  #   #internal_address: 172.16.42.73
+  #   user: ubuntu
+  #   role: [worker]
 
 authentication:
     strategy: x509
