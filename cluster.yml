@@ -2,33 +2,33 @@ ssh_key_path: C:\Users\VHS Kishore\Desktop\Keys\Macbook Air M1.pem
 cluster_name: itzhskcluster
 kubernetes_version: v1.26.7-rancher1-1
 nodes:
-    - address: 54.81.185.130
+    - address: 18.209.34.187
       user: ubuntu
       role:
         - controlplane
         - etcd
         - worker
-    - address: 54.90.182.202
+    - address: 23.20.54.84
       user: ubuntu
       role:
         - controlplane
         - etcd
         - worker
-    - address: 54.145.214.225
+    - address: 75.101.189.142
       user: ubuntu
       role:
         - controlplane
         - etcd
         - worker
-    - address: 3.84.80.64
+    - address: 3.84.183.173
       user: ubuntu
       role:
         - worker
-    - address: 34.204.89.55
+    - address: 54.175.76.110
       user: ubuntu
       role:
         - worker
-    - address: 34.238.159.65
+    - address: 107.23.249.37
       user: ubuntu
       role:
         - worker
